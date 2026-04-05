@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — Sky Cleaner Services</title>
+  <meta name="description" content="Company Overview, Mission, and Vision of Sky Cleaner Services." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .content-section {
+      padding: 3.5rem 2rem 6rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .content-block {
+      margin-bottom: 3.5rem;
+    }
+    .content-block h2 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--blue-deep);
+      margin-bottom: 1.25rem;
+      display: flex; align-items: center; gap: 0.85rem;
+    }
+    .content-block h2::after {
+      content: ''; flex: 1; height: 1px; background: rgba(30,95,175,0.1);
+    }
+    .content-block p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+    .content-block ul {
+      list-style: none; padding: 0; margin-top: 1.5rem;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;
+    }
+    .content-block ul li {
+      display: flex; align-items: center; gap: 0.75rem;
+      background: #f0f6ff; padding: 1rem 1.5rem; border-radius: var(--radius-md);
+      font-weight: 600; color: var(--blue-deep);
+      border: 1px solid rgba(30,95,175,0.1);
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .content-block ul li:hover {
+      background: #e2eeff; border-color: rgba(30,95,175,0.2);
+    }
+    .content-block ul li::before {
+      content: '✓'; color: var(--green-eco); font-weight: 900;
+    }
+  </style>
+</head>
+<body style="background: var(--blue-offwhite); color: var(--text-dark);">
+
+  <!-- ====== NAVBAR ====== -->
+  <nav id="navbar" aria-label="Main navigation">
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <img src="logo.png" alt="Sky Cleaner Services" style="height:62px; width:auto; display:block;" />
+      </div>
+
+      <ul class="nav-links" role="list">
+        <li><a href="index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
+        <li><a href="about.html" class="nav-link" data-i18n="nav.about">About Us</a></li>
+        <li><a href="index.html#capabilities" class="nav-link" data-i18n="nav.services">Services</a></li>
+        <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact Us</a></li>
+      </ul>
+
+      <div class="lang-dropdown">
+        <button class="lang-flag-btn" aria-label="Select language" aria-haspopup="true" aria-expanded="false">
+          <span class="flag-current">&#x1F1E8;&#x1F1E6;</span>
+        </button>
+        <div class="lang-dropdown-menu">
+          <button class="lang-dropdown-item active" data-lang="en">
+            <span class="item-flag">&#x1F1E8;&#x1F1E6;</span>
+            <span>English</span>
+          </button>
+          <button class="lang-dropdown-item" data-lang="fr">
+            <span class="item-flag">&#x1F1EB;&#x1F1F7;</span>
+            <span>Fran&ccedil;ais</span>
+          </button>
+        </div>
+      </div>
+
+      <a href="contact.html" class="nav-cta" id="nav-cta-btn" data-i18n="nav.quote">Get a Quote</a>
+
+      <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">✕</button>
+    <ul class="mobile-links" role="list">
+      <li><a href="index.html" class="mobile-link" data-i18n="mob.home">Home</a></li>
+      <li><a href="about.html" class="mobile-link" data-i18n="mob.about">About Us</a></li>
+      <li><a href="index.html#capabilities" class="mobile-link" data-i18n="mob.services">Services</a></li>
+      <li><a href="contact.html" class="mobile-link" data-i18n="mob.contact">Contact Us</a></li>
+    </ul>
+    <div class="mobile-lang-flags">
+      <button class="mobile-flag-btn active" data-lang="en">
+        <span class="item-flag">&#x1F1E8;&#x1F1E6;</span> EN
+      </button>
+      <button class="mobile-flag-btn" data-lang="fr">
+        <span class="item-flag">&#x1F1EB;&#x1F1F7;</span> FR
+      </button>
+    </div>
+    <a href="contact.html" class="mobile-cta" data-i18n="mob.quote">Get a Quote</a>
+  </div>
+
+  <header class="page-header">
+    <div class="page-header-inner">
+      <h1 class="page-title" data-i18n="about.page.title">About Us</h1>
+      <p class="page-subtitle" data-i18n="about.page.subtitle">Transforming the exterior cleaning industry in Djibouti.</p>
+    </div>
+  </header>
+
+  <main class="content-section">
+    <div class="content-block" data-animate="fade-up">
+      <h2><span class="section-icon">🏢</span> <span data-i18n="about.s1.title">Company Overview</span></h2>
+      <p data-i18n-html="about.s1.p1"><strong>Sky Cleaner Services is a modern drone-powered exterior cleaning company headquartered in Djibouti City, Djibouti.</strong> The company specializes in providing innovative, safe, and efficient cleaning solutions for high-rise buildings, industrial facilities, and renewable energy infrastructure.</p>
+      <p data-i18n="about.s1.p2">By combining advanced drone technology with professional cleaning systems, Sky Cleaner Services eliminates the need for traditional scaffolding, cranes, and high-risk manual work.</p>
+      <p data-i18n="about.s1.p3">Our solutions are designed to deliver high performance, reduced operational risks, and environmentally responsible cleaning services across Djibouti. We proudly serve clients in the commercial, industrial, government, and renewable energy sectors.</p>
+      <div class="about-stats-grid">
+        <div class="about-stat"><strong>100%</strong><span>Electric Fleet</span></div>
+        <div class="about-stat"><strong>0</strong><span>Scaffolding Needed</span></div>
+        <div class="about-stat"><strong>40%</strong><span>Less Water Used</span></div>
+        <div class="about-stat"><strong data-i18n="about.stat.gov">🇩🇯 Authorized by the Government of Djibouti</strong><span data-i18n="about.stat.gov.sub">The company is in compliance with regulations of the Republic of Djibouti.</span></div>
+      </div>
+    </div>
+
+    <div class="content-block" data-animate="fade-up">
+      <h2><span class="section-icon">🎯</span> <span data-i18n="about.s2.title">Our Mission</span></h2>
+      <p data-i18n="about.s2.p1">To become Djibouti’s leading drone-powered exterior cleaning company by delivering innovative, reliable, and environmentally responsible solutions while maintaining the highest standards of safety and efficiency.</p>
+    </div>
+
+    <div class="content-block" data-animate="fade-up">
+      <h2><span class="section-icon">🔭</span> <span data-i18n="about.s3.title">Our Vision</span></h2>
+      <p data-i18n="about.s3.p1">Our vision is to transform the exterior cleaning industry in Djibouti and the wider region by introducing cutting-edge aerial technology that improves safety, efficiency, and environmental sustainability.</p>
+    </div>
+
+    <div class="content-block" data-animate="fade-up">
+      <h2><span class="section-icon">✅</span> <span data-i18n="about.s4.title">Why Choose Sky Cleaner Services</span></h2>
+      <p data-i18n="about.s4.p1">Clients choose Sky Cleaner Services because we provide innovative approaches that allow businesses to maintain their properties more efficiently and with significantly lower risk.</p>
+      <ul>
+        <li data-i18n="about.s4.li1">Faster cleaning operations</li>
+        <li data-i18n="about.s4.li2">Safer working conditions</li>
+        <li data-i18n="about.s4.li3">Reduced operational costs</li>
+        <li data-i18n="about.s4.li4">Advanced drone technology</li>
+        <li data-i18n="about.s4.li5">Professional and reliable service</li>
+        <li data-i18n="about.s4.li6">Environmentally responsible cleaning solutions</li>
+      </ul>
+    </div>
+  </main>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="footer-logo">
+          <img src="logo.png" alt="Sky Cleaner Services" style="height:62px; width:auto; display:block;" />
+        </div>
+        <p class="footer-tagline" data-i18n="footer.tagline">Cleaning at a higher standard.</p>
+      </div>
+      <div class="footer-links-cols">
+        <div class="footer-col">
+          <h4 data-i18n="footer.services">Services</h4>
+          <ul role="list">
+            <li><a href="index.html#capabilities">High-Rise Window Cleaning</a></li>
+            <li><a href="index.html#capabilities">Building & Facade Restoration</a></li>
+            <li><a href="index.html#capabilities">Fleet Cleaning</a></li>
+            <li><a href="index.html#capabilities">Wind & Solar Cleaning</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.company">Company</h4>
+          <ul role="list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.contact_col">Contact Information</h4>
+          <ul role="list">
+            <li style="color:var(--text-muted); font-size: 0.85rem; margin-bottom: 0.5rem;">CEO: Allale Hassan Robleh</li>
+            <li style="color:var(--text-muted); font-size: 0.85rem; margin-bottom: 0.5rem;">Djibouti City, Djibouti</li>
+            <li><a href="mailto:skycleaners.dj@gmail.com">skycleaners.dj@gmail.com</a></li>
+            <li><a href="tel:77879440">Phone: 77 879440</a></li>
+            <li><a href="https://skycleanersservices.com">skycleanersservices.com</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footer.rights">© 2026 Sky Cleaner Services. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
+        <a href="terms.html" data-i18n="footer.terms">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="lang.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
