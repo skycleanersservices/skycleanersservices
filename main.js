@@ -340,49 +340,56 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-(function() {
-  emailjs.init("kRxm71ZSJ4U9kgCC8");
-})();
 
-document.getElementById("contactForm").addEventListener("submit", function(e) {
-  e.preventDefault();
+document.addEventListener("DOMContentLoaded", function () {
 
-  const btn = document.querySelector(".btn-form-submit");
-  const btnText = btn.querySelector(".btn-text");
+  const form = document.getElementById("quoteForm");
+  if (!form) return;
 
-  // 🔄 Loading state
-  btn.disabled = true;
-  btnText.innerText = "Sending...";
+  // ✅ Init EmailJS safely
+  if (typeof emailjs !== "undefined") {
+    emailjs.init("kRxm71ZSJ4U9kgCC8");
+  }
 
-  // ✅ SET SUBJECT (IMPORTANT FIX)
-  document.querySelector('input[name="subject"]').value = "New Quote Request - Sky Cleaner";
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-  emailjs.sendForm("service_1l0ac24", "template_p5aegib", "#contactForm")
-    .then(function(response) {
+    const btn = form.querySelector(".btn-form-submit");
+    const btnText = btn.querySelector(".btn-text");
 
-      btnText.innerText = "Sent Successfully!";
-      btn.style.backgroundColor = "#28a745";
+    btn.disabled = true;
+    btnText.innerText = "Sending...";
 
-      document.getElementById("contactForm").reset();
+    emailjs.sendForm("service_1l0ac24", "template_p5aegib", form)
+      .then(() => {
 
-      setTimeout(() => {
-        btn.disabled = false;
-        btnText.innerText = "Request a Quote";
-        btn.style.backgroundColor = "";
-      }, 3000);
+        btnText.innerText = "Sent Successfully!";
+        btn.style.backgroundColor = "#28a745";
 
-    }, function(error) {
+        form.reset();
 
-      console.error("EmailJS Error:", error);
+        setTimeout(() => {
+          btn.disabled = false;
+          btnText.innerText = "Request a Quote";
+          btn.style.backgroundColor = "";
+        }, 3000);
 
-      btnText.innerText = "Failed! Try Again";
-      btn.style.backgroundColor = "#dc3545";
+      })
+      .catch((error) => {
 
-      setTimeout(() => {
-        btn.disabled = false;
-        btnText.innerText = "Request a Quote";
-        btn.style.backgroundColor = "";
-      }, 3000);
+        console.error("EmailJS Error:", error);
 
-    });
+        btnText.innerText = "Failed! Try Again";
+        btn.style.backgroundColor = "#dc3545";
+
+        setTimeout(() => {
+          btn.disabled = false;
+          btnText.innerText = "Request a Quote";
+          btn.style.backgroundColor = "";
+        }, 3000);
+
+      });
+
+  });
+
 });
